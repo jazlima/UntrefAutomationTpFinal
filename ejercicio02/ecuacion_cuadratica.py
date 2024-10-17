@@ -18,7 +18,6 @@ def ecuacion_cuadratica(a, b, c):
         parte_imaginaria = (abs(discriminante))**0.5 / (2*a)
         return f"Las raíces son complejas: {parte_real} + {parte_imaginaria}i, {parte_real} - {parte_imaginaria}i"
     
-
 a = 1
 b = -3
 c = 2

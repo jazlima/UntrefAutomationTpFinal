@@ -55,8 +55,7 @@ class Test_Pokeapi(unittest.TestCase):
 
 
 
-#clase 14, minuto 28 empieza a hablar de apis
-#clase 14, minuto 52 empieza a hablar de automatizacion de apis
+
 
 
 
