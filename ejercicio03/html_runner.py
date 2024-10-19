@@ -6,4 +6,4 @@ runner = HTMLTestRunner(output='test-reports', report_title='Pruebas de Saucelab
 try:
     runner.run(test_suite)
 except:
-    print('Falta algo')
+    print('Hubo un error')

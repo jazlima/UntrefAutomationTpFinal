@@ -41,13 +41,13 @@ class Compras(unittest.TestCase):
        self.driver.close()
        self.driver.quit()
 
-    def test_order_prices(self):
+    def test_order_price_lohi(self):
         self.page_inventory.select_order_by_visible_text('Price (low to high)')
         prices = self.driver.find_elements(By.CLASS_NAME, 'inventory_item_price')
         prices_list = [float(price.text.replace('$', '')) for price in prices]
         self.assertEqual(prices_list, sorted(prices_list))
 
-    def test_buy(self):
+    def test_buy_error(self):
         add_buttons = self.driver.find_elements(By.CLASS_NAME, 'btn_inventory')
         for button in add_buttons:
                button.click()
@@ -67,7 +67,7 @@ class Compras(unittest.TestCase):
         message = page_checkout.get_error_message()
         self.assertEqual('Error: Postal Code is required', message)
         
-    def test_buy2(self):
+    def test_buy_ok(self):
         self.driver.find_element(By.ID, 'add-to-cart-sauce-labs-bike-light').click()
         self.page_inventory.go_to_cart()
         self.driver.find_element(By.ID, 'remove-sauce-labs-bike-light').click()
